@@ -27,19 +27,19 @@ public class KnihaSluzba {
         return seznamKnih;
     }
 
-    public List<String> vypisVsechnyKnihy() {
-        List<String> vysledek = new ArrayList<>();
+    public List<Kniha> vypisVsechnyKnihy() {
+        List<Kniha> vysledek = new ArrayList<>();
         for (Kniha seznam : seznamKnih) {
-            vysledek.add(String.valueOf(seznam));
+            vysledek.add(seznam);
         }
         return vysledek;
     }
 
-    public List<String> vypisKnihyOdAutora(String autor) {
-        List<String> vysledek = new ArrayList<>();
+    public List<Kniha> vypisKnihyOdAutora(String autor) {
+        List<Kniha> vysledek = new ArrayList<>();
         for (Kniha seznam : seznamKnih) {
-            if (seznam.getAutor() == autor) {
-                vysledek.add(String.valueOf(seznam));
+            if (autor.equals(seznam.getAutor())) {
+                vysledek.add(seznam);
             }
         } if (vysledek.isEmpty()) {
             return vysledek;
@@ -48,11 +48,11 @@ public class KnihaSluzba {
         }
     }
 
-    public List<String> vypisKnihyVydaneVRoce(String rokVydani) {
-        List<String> vysledek = new ArrayList<>();
+    public List<Kniha> vypisKnihyVydaneVRoce(String rokVydani) {
+        List<Kniha> vysledek = new ArrayList<>();
         for (Kniha seznam : seznamKnih) {
-            if (seznam.getRokVydani() == rokVydani) {
-                vysledek.add(String.valueOf(seznam));
+            if (rokVydani.equals(seznam.getRokVydani())) {
+                vysledek.add(seznam);
             }
         } if (vysledek.isEmpty()) {
             return vysledek;
